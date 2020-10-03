@@ -5,6 +5,7 @@ from impacket.krb5.ccache import CCache, Header, Credential, KeyBlock, Times, Co
 from impacket.krb5 import types
 from pyasn1.codec.der import encoder
 
+
 class KrbCredCCache(CCache):
     """
     This is just the impacket ccache, but with an extra function to create it from
@@ -17,7 +18,6 @@ class KrbCredCCache(CCache):
         header['taglen'] = 8
         header['tagdata'] = '\xff\xff\xff\xff\x00\x00\x00\x00'
         self.headers.append(header)
-
 
         tmpPrincipal = types.Principal()
         tmpPrincipal.from_asn1(ticketdata, 'prealm', 'pname')

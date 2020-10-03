@@ -8,6 +8,7 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 class msg:
     def ok(self, message):
         print(bcolors.OKBLUE + "[*] {}".format(message) + bcolors.ENDC)
